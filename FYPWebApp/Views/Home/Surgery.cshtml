@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_dashboardlayout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Surgery</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<form class="form-horizontal">
+    <fieldset>
+
+      
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="SurgeryName">Surgery Name</label>
+            <div class="col-md-4">
+                <input id="SurgeryName" name="SurgeryName" type="text" placeholder="Shoulder Surgery" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="SurgeryType">Surgery Type</label>
+            <div class="col-md-4">
+                <input id="SurgeryType" name="SurgeryType" type="text" placeholder="Surgery Type" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Surgery Description">Surgery Description</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="Surgery Description" name="Surgery Description"></textarea>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

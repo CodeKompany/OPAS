@@ -1,0 +1,176 @@
+﻿@{
+    Layout = "~/Views/Shared/_dashboardlayout.cshtml";
+}
+    <div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Prescription</h1>
+
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Recommended Medicines</legend>
+
+        <!-- Text input-->
+        <h3> Medicine 1 </h3>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Medicine Name">Medicine Name</label>
+            <div class="col-md-4">
+                <input id="Medicine Name" name="Medicine Name" type="text" placeholder="Panadol" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="MedicineDosage">Medicine Dosage</label>
+            <div class="col-md-4">
+                <input id="MedicineDosage" name="MedicineDosage" type="text" placeholder="1+0+1" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="MedicineWeight">Medicine Weight</label>
+            <div class="col-md-4">
+                <input id="MedicineWeight" name="MedicineWeight" type="text" placeholder="250mg" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="NumberOfDays">Number Of Days</label>
+            <div class="col-md-4">
+                <input id="NumberOfDays" name="NumberOfDays" type="text" placeholder="For 2 weeks" class="form-control input-md">
+
+            </div>
+        </div>
+
+
+        <div class="form-group"> <label class="col-md-4 control-label" for="MedicineType">Medicine Type</label>  <div class="col-md-4"><input id="MedicineType" name="MedicineType" type="text" placeholder="Pill/Syrup/Tablet etc." class="form-control input-md"> </div></div>
+
+        <div id="appendDiv">
+
+        </div>
+
+
+        <button type="button" style="margin-bottom:10px" onclick="generateForm()"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+        <button type='button' style='margin-bottom:10px' onclick='removeForm()'><i class='fa fa-minus-circle fa-2x' aria-hidden='true'></i></button>
+
+
+
+
+        <script>
+String.prototype.splice = function(idx, rem, str) {
+    return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+};
+
+	 var num = 2;
+	 var num2 = 2;
+function generateForm(){
+	 //var num = 2;
+	 var n = num.toString();
+	 var x = "<div> <h3> Medicine ";
+	 var id = " id = ";
+	 var idx = id.concat(n);
+	 var result = x.splice(4, 0, idx );
+	 var k = result.concat(n);
+	 var con = k.concat("</h3>")
+     var HTML = " <div class='form-group'><label class='col-md-4 control-label' for='Medicine Name'>Medicine Name</label>  <div class='col-md-4'><input id='Medicine Name' name='Medicine Name' type='text' placeholder='Panadol' class='form-control input-md' required=''></div></div><div class='form-group'><label class='col-md-4 control-label' for='MedicineDosage'>Medicine Dosage</label>  <div class='col-md-4'><input id='MedicineDosage' name='MedicineDosage' type='text' placeholder='1+0+1' class='form-control input-md' required=''></div></div><div class='form-group'><label class='col-md-4 control-label' for='MedicineWeight'>Medicine Weight</label>  <div class='col-md-4'><input id='MedicineWeight' name='MedicineWeight' type='text' placeholder='250mg' class='form-control input-md'>   </div></div><div class='form-group'>  <label class='col-md-4 control-label' for='NumberOfDays'>Number Of Days</label><div class='col-md-4'> <input id='NumberOfDays' name='NumberOfDays' type='text' placeholder='For 2 weeks' class='form-control input-md'> </div></div><div class ='form-group'><label class='col-md-4 control-label' for='MedicineType'>Medicine Type</label>   <div class='col-md-4'>  <input id='MedicineType' name='MedicineType' type='text' placeholder='Pill/Syrup/Tablet etc.' class='form-control input-md'> </div> </div></div> ";
+
+	 var j = con.concat(HTML);
+   $("#appendDiv").append(j);
+   num = num +1;
+}
+function removeForm(){
+	 //var num = 2;
+	 //var j = con.concat(HTML);
+	 if (num>2){
+	 num = num -1;
+	 var x = "#";
+	 var n = num.toString();
+	 var z = x.concat(n);
+
+
+   $(z).remove();
+  // num = num -1;
+   }
+}
+
+
+function generateForm2(){
+	 //var num = 2;
+	 var n = num2.toString();
+	 var x = "<div> <h3> Test ";
+	 var id = " id = ";
+	 var idx = id.concat(n);
+	 var result = x.splice(4, 0, idx );
+	 var k = result.concat(n);
+	 var con = k.concat("</h3>")
+     var HTML = "<div class='form-group'> <label class='col-md-4 control-label' for='Name'>Name</label>   <div class='col-md-4'> <input id='Name' name='Name' type='text' placeholder='Blood Test' class='form-control input-md'> </div></div><div class='form-group'> <label class='col-md-4 control-label' for='LabName'>Recommended Lab</label>   <div class='col-md-4'><input id='LabName' name='LabName' type='text' placeholder='The Lab' class='form-control input-md'> </div></div> </div>";
+
+     	 var j = con.concat(HTML);
+   $("#appendDiv2").append(j);
+//   num = num +1;
+num2 = num2+1;
+}
+
+function removeForm2(){
+	 //var num = 2;
+	 //var j = con.concat(HTML);
+if (num2>2){
+	 num2 = num2 -1;
+	 var x = "#";
+	 var n = num2.toString();
+	 var z = x.concat(n);
+
+
+   $(z).remove();
+  // num = num -1;
+   }
+}
+
+        </script>
+
+
+        <legend>Recommended Tests</legend>
+        <!-- Text input-->
+
+        <h3> Test 1 </h3>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Name</label>
+            <div class="col-md-4">
+                <input id="Name" name="Name" type="text" placeholder="Blood Test" class="form-control input-md">
+
+            </div>
+        </div>
+
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="LabName">Recommended Lab</label>
+            <div class="col-md-4">
+                <input id="LabName" name="LabName" type="text" placeholder="The Lab" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <div id="appendDiv2">
+
+        </div>
+
+    </fieldset>
+</form>
+
+<button type="button" style="margin-bottom:10px" onclick="generateForm2()"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+<button type="button" style="margin-bottom:10px" onclick="removeForm2()"><i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i></button>
+
+
